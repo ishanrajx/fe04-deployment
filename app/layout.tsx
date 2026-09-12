@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 
+const appName = process.env.NEXT_PUBLIC_APP_NAME || "AI Study Assistant";
+
 export const metadata: Metadata = {
-  title: "AI Study Assistant",
+  title: appName,
   description: "Study smarter with AI",
 };
 
@@ -17,11 +19,8 @@ export default function RootLayout({
       <body className="bg-slate-950 text-white">
         <nav className="border-b border-slate-800 bg-slate-950">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-6 px-6 py-4">
-            <Link
-              href="/"
-              className="font-bold text-blue-400"
-            >
-              AI Study Assistant
+            <Link href="/" className="font-bold text-blue-400">
+              {appName}
             </Link>
 
             <div className="flex gap-5 text-sm text-slate-300">
